@@ -153,6 +153,10 @@ $(".list-group").on("change", "input[type='text']", function () {
   auditTask($(taskSpan).closest(".list-group-item"));
 });
 
+
+
+
+
 $(".card .list-group").sortable({
   connectWith: $(".card .list-group"),
   scroll: false,
@@ -290,3 +294,8 @@ $("#remove-tasks").on("click", function () {
 loadTasks();
 
 
+setInterval(function () {
+  $(".card .list-group-item").each(function (index, el) {
+    auditTask(el);
+  });
+}, 1800000);
